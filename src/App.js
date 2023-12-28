@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import InvoiceForm from './Pages/InvoiceForm';
 import Home from './Pages/Home';
 
+// Implemented routing to navigate across the page and incorporated a Container function for enhanced styling.
+
 class App extends Component {
   render() {
   return (

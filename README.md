@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Redux-based Invoice Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Redux-based Invoice Management System! This project addresses the task assigned as part of the interview process, involving the development of a simple invoice management system using React and Redux.
 
-## Available Scripts
+### This site is live on - [Invoice Manager](https://swipe-invoice-manager.vercel.app/).
+
+## Project Overview
+
+This project is an extension of an existing GitHub repository created by John Uberbacher. The goal was to implement features related to invoice creation, management, and state management using Redux.
+
+## Completed Tasks
+
+#### Redux Integration
+Integrated Redux into the application by creating a Redux store.
+
+#### Redux Actions, Action Types, and Reducers
+Created Redux actions, action types, and reducers to manage the invoice state (add, edit, view, and delete invoices).
+
+#### Invoice List Component
+Implemented a component to display a list of invoices
+
+#### UI Refinement
+Set the list of invoices as the first screen upon application launch.\
+Moved the create invoice functionality to a new button.
+
+#### Operations in Invoice List
+Enhanced the invoice list by adding buttons or options for view, edit, and delete operations.
+
+#### State Management
+Ensured proper state management throughout the application by connecting components to the Redux store.
+
+#### Additional Functionality
+Implemented "Copy to New Invoice" functionality, allowing users to duplicate an existing invoice.
+
+## Scripts to initiate the application locally
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install all the dependencies which the app required to run.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Conclusion
+All the tasks have been completed successfully. The project is now ready for review.\
+Thank you for the opportunity, and I look forward to discussing the implementation further.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Best regards,
+Ansuman Nayak

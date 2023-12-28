@@ -14,44 +14,46 @@ import { connect } from "react-redux";
 class InvoiceForm extends React.Component {
   constructor(props) {
     super(props);
+    /* modified this.state input so that it can take data if data exist for the perticular Id number wwhen edit is clicked and if new is created blank data is added*/
     this.state = this.props.location.state
-    ? this.props.location.state
-    : {
-      isOpen: false,
-      currency: "$",
-      currentDate: "",
-      invoiceNumber: 1,
-      dateOfIssue: "",
-      billTo: "",
-      billToEmail: "",
-      billToAddress: "",
-      billFrom: "",
-      billFromEmail: "",
-      billFromAddress: "",
-      notes: "",
-      total: "0.00",
-      subTotal: "0.00",
-      taxRate: "",
-      taxAmmount: "0.00",
-      discountRate: "",
-      discountAmmount: "0.00",
-      items : [
-      {
-        id: 0,
-        name: "",
-        description: "",
-        price: "1.00",
-        quantity: 1,
-      },
-    ],
-  }
-  this.state.isOpen= false
+      ? this.props.location.state
+      : {
+          isOpen: false,
+          currency: "$",
+          currentDate: "",
+          invoiceNumber: 1,
+          dateOfIssue: "",
+          billTo: "",
+          billToEmail: "",
+          billToAddress: "",
+          billFrom: "",
+          billFromEmail: "",
+          billFromAddress: "",
+          notes: "",
+          total: "0.00",
+          subTotal: "0.00",
+          taxRate: "",
+          taxAmmount: "0.00",
+          discountRate: "",
+          discountAmmount: "0.00",
+          items: [
+            {
+              id: 0,
+              name: "",
+              description: "",
+              price: "1.00",
+              quantity: 1,
+            },
+          ],
+        };
+    this.state.isOpen = false;
     this.editField = this.editField.bind(this);
   }
   componentDidMount(prevProps) {
-    const maxInvoiceNumber =0;
+    const maxInvoiceNumber = 0;
+    //  To assign a Id number
     if (this.props.location.state?.copymode || !this.props.location.state) {
-    const maxInvoiceNumber = Math.max(
+      const maxInvoiceNumber = Math.max(
         ...this.props.invoices.invoices.map((invoice) => invoice.invoiceNumber)
       );
       this.setState({
@@ -67,7 +69,7 @@ class InvoiceForm extends React.Component {
     this.handleCalculateTotal();
   }
   handleAddEvent(evt) {
-    console.log(this.state.items)
+    console.log(this.state.items);
     var id = (+new Date() + Math.floor(Math.random() * 999999)).toString(36);
     var items = {
       id: id,
@@ -80,10 +82,12 @@ class InvoiceForm extends React.Component {
     this.setState(this.state.items);
     this.handleCalculateTotal();
   }
+
+  // edited the handleCalculation function as it was not working earlier
+
   handleCalculateTotal() {
     var items = this.state.items;
     var subTotal = 0;
-    var mid_value = 0;
 
     items.map(function (items) {
       subTotal =
@@ -173,9 +177,11 @@ class InvoiceForm extends React.Component {
                     </div>
                   </div>
                   <div className="d-flex flex-row align-items-center">
-                    <span className=" fw-bold d-block me-2">Due&nbsp;Date:</span>
+                    <span className=" fw-bold d-block me-2">
+                      Due&nbsp;Date:
+                    </span>
                     <Form.Control
-                    className="date_pick"
+                      className="date_pick"
                       type="date"
                       value={this.state.dateOfIssue}
                       name={"dateOfIssue"}
@@ -341,7 +347,11 @@ class InvoiceForm extends React.Component {
           </Col>
           <Col md={4} lg={3}>
             <div className="sticky-top pt-md-3 pt-xl-4">
-              <Button variant="outline-primary" type="submit" className="d-block w-100">
+              <Button
+                variant="outline-primary"
+                type="submit"
+                className="d-block w-100"
+              >
                 Review Invoice
               </Button>
               <InvoiceModal
@@ -419,6 +429,8 @@ class InvoiceForm extends React.Component {
     );
   }
 }
+
+// to map state and props
 
 const mapStateToProps = (state) => {
   return {

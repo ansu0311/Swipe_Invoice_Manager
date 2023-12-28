@@ -18,19 +18,29 @@ const List = () => {
   const [showInvoiceModal, setShowInvoiceModal] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
 
+  // to add new invoice form
+
   const handleAddButtonClick = () => {
     navigate("/create", { state: null });
   };
+
+  // to delete all invoices from local storage as well
+
   const handleDeleteButtonClick = () => {
     clearInvoicesToLocalStorage();
     dispatch(deleteAllInvoice());
     navigate("/");
   };
+
+  // to edit the perticular invoice
+
   const handleEditButtonClick = (invoice) => {
     navigate(`/create/${invoice.invoiceNumber}`, {
       state: { ...invoice, copymode: false },
     });
   };
+
+  // to cpoy the data from perticular invoice
 
   const handleCopyButtonClick = (invoice) => {
     navigate(`/create/${invoice.invoiceNumber}`, {
@@ -38,6 +48,7 @@ const List = () => {
     });
   };
 
+  // to delete the invoice
   const handleDeleteInvoice = (invoiceNumber) => {
     dispatch(deleteInvoice(invoiceNumber));
   };
